@@ -44,7 +44,7 @@ status DpllSolver(ClauseNode *s, int *truth_table)
     return DpllSolver(AddClause(s, -var), truth_table);
 }
 
-// 添加子句到子句集
+// 添加子句至子句集
 ClauseNode *AddClause(ClauseNode *s, int var)
 {
     ClauseNode *c_tmp = (ClauseNode *)malloc(sizeof(ClauseNode));
