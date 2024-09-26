@@ -1,9 +1,6 @@
 // cnf_parser.c
 
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "head.h"
 
 // 数据结构的定义
 typedef struct bool_element

@@ -1,3 +1,5 @@
+// generate_diagonal_sudoku.c
+
 #include "head.h"
 
 int solutionCount; // 全局变量来计数解的数量

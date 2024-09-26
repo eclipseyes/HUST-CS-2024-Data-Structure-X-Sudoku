@@ -1,10 +1,6 @@
+// better_solver.c
+
 #include "head.h"
-#include <math.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
 
 // 修改后的 DPLL 求解器
 status DpllSolver(ClauseNode *s, int *truth_table, int pickvar_choice)
