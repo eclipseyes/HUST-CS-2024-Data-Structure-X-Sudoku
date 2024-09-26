@@ -51,5 +51,6 @@ ClauseNode *CnfParser(int *literal_num, char *filename, int *max_var);
 int PickVar_1(ClauseNode *s);
 int PickVar_2(ClauseNode *s);
 int PickVar_3(ClauseNode *s);
+void clause_print(ClauseNode *root, FILE *output_file);
 
 #endif // HEAD_H
