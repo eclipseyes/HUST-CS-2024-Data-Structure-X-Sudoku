@@ -1,7 +1,7 @@
 # 基于SAT的对角线数独游戏求解程序
 
 ## 简介课程设计
-这是我完成的2024年秋季数据结构课设。课设使用PyQt5实现了界面设计，并成功设计了SAT问题的求解器（包含初始版本和优化版），同时完成了对角线数独问题的程序。验收时1-7算例能够用基础求解器解出，1-8、11能够用优化求解器解出。最后我用pyinstaller将所有相关文件打包生成X-sudoku程序。相关代码和文件均已经上传到github上:https://github.com/eclipseyes/HUST-CS-2024-Data-Structure-X-Sudoku。
+这是我完成的2024年秋季数据结构课设。课设使用PyQt5实现了界面设计，并成功设计了SAT问题的求解器（包含初始版本和优化版），同时完成了对角线数独问题的程序。验收时1-7算例能够用基础求解器解出，1-8、11能够用优化求解器解出。最后我用pyinstaller将所有相关文件打包生成X-sudoku程序。相关代码和文件均已经上传到github上:https://github.com/eclipseyes/HUST-CS-2024-Data-Structure-X-Sudoku 。
 <br>
 <br>
 ## 操作指南
