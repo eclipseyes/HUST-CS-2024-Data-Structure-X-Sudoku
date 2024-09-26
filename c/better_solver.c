@@ -266,13 +266,13 @@ int PickVar_1(ClauseNode *s) // 选择出现次数最多的变元
     return selected_var;
 }
 
-int PickVar_2(ClauseNode *s)
+int PickVar_2(ClauseNode *s) // 选择下一个变元
 {
     int var = s->down->right->data;
     return var;
 }
 
-int PickVar_3(ClauseNode *s)
+int PickVar_3(ClauseNode *s) // 为所在子句较短的变元分配较大权重
 {
     int max_var = 0;
     ClauseNode *c_tmp = s->down;
