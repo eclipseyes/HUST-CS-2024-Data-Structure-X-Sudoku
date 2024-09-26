@@ -17,6 +17,9 @@ class MainApp(QMainWindow):
         self.stacked_widget = QStackedWidget()
         self.setCentralWidget(self.stacked_widget)
 
+        # 定义路径根目录
+        self.c_programs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../c')
+
         # 创建并添加各个界面到 QStackedWidget
         self.start_ui = Ui_StartWindow()
         self.rules_ui = Ui_RulesWindow()
@@ -125,8 +128,10 @@ class MainApp(QMainWindow):
         # 调用C程序生成对角线数独题目
         semantic_file_path = "generated_puzzle.cnf"  # 生成的语义编码CNF文件路径
         natural_file_path = "altered_puzzle.cnf"  # 生成的自然编码CNF文件路径
-        generator_path = os.path.abspath(r"C:\\Users\\Qiu\\Desktop\\mess\\sudoku_project\\c\\generate_diagonal_sudoku.exe")
-        solver_path = os.path.abspath(r"C:\\Users\\Qiu\\Desktop\\mess\\sudoku_project\\c\\sudoku_solver.exe")
+        generator_path = os.path.join(self.c_programs_dir, 'generate_diagonal_sudoku.exe')
+
+        solver_path = os.path.join(self.c_programs_dir, 'sudoku_solver.exe')
+
 
         try:
             result = subprocess.run([generator_path, difficulty_level, semantic_file_path, natural_file_path], check=True, capture_output=True, text=True, encoding='utf-8')
@@ -159,7 +164,8 @@ class MainApp(QMainWindow):
         """
         使用 cnf_to_grid.exe 将 CNF 格式的解转换为数独网格格式。
         """
-        converter_path = os.path.abspath(r"C:\\Users\\Qiu\\Desktop\\mess\\sudoku_project\\c\\cnf_to_grid.exe")
+        converter_path = os.path.join(self.c_programs_dir, 'cnf_to_grid.exe')
+
         grid_output_path = "solution.txt"  # 转换后的数独网格路径
 
         try:
@@ -179,7 +185,8 @@ class MainApp(QMainWindow):
 
     def display_puzzle(self, cnf_file_path):
         """将CNF格式的数独题目转换为可显示的数独格局"""
-        parser_path = os.path.abspath(r"C:\\Users\\Qiu\\Desktop\\mess\\sudoku_project\\c\\cnf_to_grid.exe")
+        parser_path = os.path.join(self.c_programs_dir, 'cnf_to_grid.exe')
+
         puzzle_file_path = "sudoku_puzzle.txt"  # 生成的数独格局路径
 
         try:
@@ -277,7 +284,8 @@ class MainApp(QMainWindow):
                 print("Error: File does not exist.")
                 return
             
-            cnf_parser_path = os.path.abspath(r"C:\\Users\\Qiu\\Desktop\\mess\\sudoku_project\\c\\cnf_parser.exe")
+            cnf_parser_path = os.path.join(self.c_programs_dir, 'cnf_parser.exe')
+
             if not os.path.exists(cnf_parser_path):
                 print(f"Error: cnf_parser.exe not found at {cnf_parser_path}")
                 return
@@ -310,7 +318,8 @@ class MainApp(QMainWindow):
             return
 
         result_file_path = cnf_file_path + ".res"
-        solver_path = os.path.abspath(r"C:\\Users\\Qiu\\Desktop\\mess\\sudoku_project\\c\\solver.exe")
+        solver_path = os.path.join(self.c_programs_dir, 'solver.exe')
+
 
         try:
             # 指定编码为 utf-8
@@ -365,7 +374,8 @@ class MainApp(QMainWindow):
             return
 
         result_file_path = f"{cnf_file_path}_faster.res"
-        solver_path = os.path.abspath(r"C:\\Users\\Qiu\\Desktop\\mess\\sudoku_project\\c\\better_solver.exe")
+        solver_path = os.path.join(self.c_programs_dir, 'better_solver.exe')
+
 
         try:
             # 运行带参数的 better_solver.exe
