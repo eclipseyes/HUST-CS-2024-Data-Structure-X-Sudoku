@@ -17,8 +17,12 @@ class MainApp(QMainWindow):
         self.stacked_widget = QStackedWidget()
         self.setCentralWidget(self.stacked_widget)
 
-        # 定义路径根目录
-        self.c_programs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../c')
+        # 动态获取C程序的路径
+        if hasattr(sys, '_MEIPASS'):
+            self.c_programs_dir = os.path.join(sys._MEIPASS, 'c')
+        else:
+            self.c_programs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../c')
+
 
         # 创建并添加各个界面到 QStackedWidget
         self.start_ui = Ui_StartWindow()
