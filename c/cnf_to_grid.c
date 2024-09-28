@@ -1,3 +1,5 @@
+//cnf_to_grid.c
+
 #include "head.h"
 
 // 初始化数独网格
