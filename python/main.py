@@ -442,9 +442,6 @@ class MainApp(QMainWindow):
             dpll_time = float(dpll_time_text)
             cdcl_time = float(cdcl_time_text)
         
-        if dpll_time == 0:
-            optimization_rate = 100
-        else:
             optimization_rate = ((dpll_time - cdcl_time) / dpll_time) * 100
             self.upload_ui.optimization_rate.setText(f"{optimization_rate:.2f}%")
             self.upload_ui.rate_label.show()
